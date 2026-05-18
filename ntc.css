@@ -9,32 +9,32 @@
 /* ---------- Ubuntu (sans) + Ubuntu Mono ---------- */
 @font-face {
   font-family: "Ubuntu";
-  src: url("fonts/Ubuntu-Regular.woff2") format("woff2");
+  src: url("https://raw.githubusercontent.com/nkallergis/ntc-theme-marp/main/fonts/Ubuntu-Regular.woff2") format("woff2");
   font-weight: 400; font-style: normal; font-display: swap;
 }
 @font-face {
   font-family: "Ubuntu";
-  src: url("fonts/Ubuntu-Italic.woff2") format("woff2");
+  src: url("https://raw.githubusercontent.com/nkallergis/ntc-theme-marp/main/fonts/Ubuntu-Italic.woff2") format("woff2");
   font-weight: 400; font-style: italic; font-display: swap;
 }
 @font-face {
   font-family: "Ubuntu";
-  src: url("fonts/Ubuntu-Medium.woff2") format("woff2");
+  src: url("https://raw.githubusercontent.com/nkallergis/ntc-theme-marp/main/fonts/Ubuntu-Medium.woff2") format("woff2");
   font-weight: 500; font-style: normal; font-display: swap;
 }
 @font-face {
   font-family: "Ubuntu";
-  src: url("fonts/Ubuntu-Bold.woff2") format("woff2");
+  src: url("https://raw.githubusercontent.com/nkallergis/ntc-theme-marp/main/fonts/Ubuntu-Bold.woff2") format("woff2");
   font-weight: 700; font-style: normal; font-display: swap;
 }
 @font-face {
   font-family: "Ubuntu Mono";
-  src: url("fonts/UbuntuMono-Regular.woff2") format("woff2");
+  src: url("https://raw.githubusercontent.com/nkallergis/ntc-theme-marp/main/fonts/UbuntuMono-Regular.woff2") format("woff2");
   font-weight: 400; font-style: normal; font-display: swap;
 }
 @font-face {
   font-family: "Ubuntu Mono";
-  src: url("fonts/UbuntuMono-Bold.woff2") format("woff2");
+  src: url("https://raw.githubusercontent.com/nkallergis/ntc-theme-marp/main/fonts/UbuntuMono-Bold.woff2") format("woff2");
   font-weight: 700; font-style: normal; font-display: swap;
 }
 
@@ -201,7 +201,7 @@ blockquote {
 
 /* --- Lead (title) slide --- */
 section.lead {
-  background-image: url("img/bg_title.png");
+  background-image: url("https://raw.githubusercontent.com/nkallergis/ntc-theme-marp/main/img/bg_title.png");
   background-size: cover;
   background-position: center;
   display: flex !important;
@@ -235,7 +235,7 @@ section.lead footer { display: none !important; }
 
 /* --- Chapter (section divider) slide --- */
 section.chapter {
-  background-image: url("img/bg_chapter_wo_chevron.png");
+  background-image: url("https://raw.githubusercontent.com/nkallergis/ntc-theme-marp/main/img/bg_chapter_wo_chevron.png");
   background-size: cover;
   background-position: center;
   display: flex !important;
@@ -265,7 +265,7 @@ section.chapter footer { display: none !important; }
 
 /* --- Split slide (left sidebar with title image, content on right) --- */
 section.split {
-  background-image: url("img/bg_title_wo_logo.png");
+  background-image: url("https://raw.githubusercontent.com/nkallergis/ntc-theme-marp/main/img/bg_title_wo_logo.png");
   background-size: 35% 100%;
   background-position: left top;
   background-repeat: no-repeat;
@@ -310,7 +310,7 @@ footer {
 /* NTC logo on the right side of every default footer */
 footer::after {
   content: "";
-  background-image: url("img/ntc_logo.png");
+  background-image: url("https://raw.githubusercontent.com/nkallergis/ntc-theme-marp/main/img/ntc_logo.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: right center;
