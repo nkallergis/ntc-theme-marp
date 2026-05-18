@@ -1,0 +1,509 @@
+/* @theme ntc */
+/* ============================================================
+   Network to Code — MARP theme
+   Aligned to the Nautobot Design System (Ubuntu type, NTC palette).
+   Fonts and background images are referenced with RELATIVE paths
+   so the theme is portable.
+   ============================================================ */
+
+/* ---------- Ubuntu (sans) + Ubuntu Mono ---------- */
+@font-face {
+  font-family: "Ubuntu";
+  src: url("fonts/Ubuntu-Regular.woff2") format("woff2");
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Ubuntu";
+  src: url("fonts/Ubuntu-Italic.woff2") format("woff2");
+  font-weight: 400; font-style: italic; font-display: swap;
+}
+@font-face {
+  font-family: "Ubuntu";
+  src: url("fonts/Ubuntu-Medium.woff2") format("woff2");
+  font-weight: 500; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Ubuntu";
+  src: url("fonts/Ubuntu-Bold.woff2") format("woff2");
+  font-weight: 700; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Ubuntu Mono";
+  src: url("fonts/UbuntuMono-Regular.woff2") format("woff2");
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Ubuntu Mono";
+  src: url("fonts/UbuntuMono-Bold.woff2") format("woff2");
+  font-weight: 700; font-style: normal; font-display: swap;
+}
+
+/* ---------- Tokens ---------- */
+:root {
+  /* NTC / Nautobot canonical palette */
+  --nb-blue-0:    #007dff;   /* primary / link */
+  --nb-blue-1:    #e5f2ff;   /* primary bg-subtle */
+  --nb-blue-2:    #cce5ff;   /* primary border-subtle, focus ring */
+  --brand-orange: #e07807;   /* chevron / warning */
+  --nb-gray-3:    #505d68;   /* secondary text — bluish slate */
+  --nb-gray-1:    #dedede;   /* default border */
+  --nb-gray-05:   #ececec;   /* subtle border */
+  --nb-gray-0:    #f4f4f4;   /* subtle bg */
+  --nb-black-0:   #1a1a1a;   /* primary text */
+  --nb-white-0:   #ffffff;
+  --nb-green-0:   #1ca92a;
+  --nb-red-0:     #e01f1f;
+
+  /* Backwards-compatible aliases (kept so older slides keep working) */
+  --brand-blue:   var(--nb-blue-0);
+  --text-dark:    var(--nb-gray-3);
+  --bg-light:     var(--nb-white-0);
+
+  --font-sans:    "Ubuntu", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono:    "Ubuntu Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --radius:       4px;
+  --border-color: var(--nb-gray-1);
+}
+
+/* ---------- Base slide ---------- */
+section {
+  width: 1280px;
+  height: 720px;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  padding: 60px 80px 100px 80px;
+  font-family: var(--font-sans);
+  font-size: 28px;
+  line-height: 1.45;
+  font-weight: 400;
+  display: block;
+  position: relative;
+  letter-spacing: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- Headings (default slides) ---------- */
+h1 {
+  color: var(--nb-gray-3);
+  font-size: 1.8em;
+  font-weight: 500;            /* Medium — matches NTC; was 300 */
+  margin: 0 0 0.1em;
+  line-height: 1.2;
+}
+h1::before {
+  content: ">>>";
+  color: var(--brand-orange);
+  font-family: var(--font-mono);
+  margin-right: 14px;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+h2 {
+  color: var(--brand-orange);
+  font-size: 1.05em;
+  font-weight: 500;
+  margin: 0 0 0.8em;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+h3 {
+  color: var(--nb-black-0);
+  font-size: 1em;
+  font-weight: 500;
+  margin: 1em 0 0.25em;
+}
+
+/* ---------- Body copy ---------- */
+p, ul, ol {
+  margin: 0 0 0.6em;
+}
+ul, ol {
+  padding-left: 1.2em;
+}
+li {
+  margin-bottom: 0.25em;
+}
+li::marker {
+  color: var(--brand-orange);
+}
+strong { font-weight: 500; color: var(--nb-black-0); }
+em     { font-style: italic; }
+a      { color: var(--nb-blue-0); text-decoration: none; }
+a:hover{ text-decoration: underline; }
+hr {
+  border: 0;
+  border-top: 1px solid var(--border-color);
+  margin: 1em 0;
+}
+
+/* ---------- Inline + block code (orange inline by request) ---------- */
+code {
+  font-family: var(--font-mono);
+  background-color: rgba(224, 120, 7, 0.08);
+  color: var(--brand-orange);
+  font-size: 0.85em;
+  padding: 1px 6px;
+  border-radius: var(--radius);
+}
+pre {
+  background: #1a1a1a;
+  color: #f4f4f4;
+  border-radius: var(--radius);
+  padding: 16px 20px;
+  font-size: 0.7em;
+  line-height: 1.55;
+  overflow-x: auto;
+  margin: 0.4em 0 0.8em;
+}
+pre code {
+  background: transparent;
+  color: inherit;
+  font-size: 1em;
+  padding: 0;
+}
+
+/* ---------- Tables ---------- */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.7em;
+  margin: 0.4em 0;
+}
+thead th {
+  background: var(--nb-gray-0);
+  color: var(--nb-black-0);
+  font-weight: 500;
+  text-align: left;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border-color);
+}
+tbody td {
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--nb-gray-05);
+}
+tbody tr:hover td {
+  background: var(--nb-blue-1);
+}
+
+/* ---------- Blockquote ---------- */
+blockquote {
+  margin: 0.4em 0;
+  padding: 8px 16px;
+  border-left: 4px solid var(--nb-gray-1);
+  color: var(--nb-gray-3);
+  font-style: italic;
+}
+
+/* ============================================================
+   SLIDE LAYOUTS
+   ============================================================ */
+
+/* --- Lead (title) slide --- */
+section.lead {
+  background-image: url("img/bg_title.png");
+  background-size: cover;
+  background-position: center;
+  display: flex !important;
+  flex-direction: column;
+  justify-content: flex-end;        /* anchor content near the bottom... */
+  align-items: flex-start;
+  padding: 80px 100px 200px;        /* ...then lift it back to ~2/3 height */
+}
+section.lead h1 {
+  color: var(--nb-white-0);
+  font-size: 3em;
+  font-weight: 500;
+  margin: 0 0 0.15em;
+}
+section.lead h1::before { content: none; }
+section.lead h2 {
+  color: var(--nb-blue-0);
+  font-size: 1.4em;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+  margin: 0;
+}
+section.lead p {
+  color: rgba(255,255,255,0.7);
+  font-size: 0.85em;
+  margin-top: 1.5em;
+}
+section.lead a { color: var(--nb-blue-0); }
+section.lead footer { display: none !important; }
+
+/* --- Chapter (section divider) slide --- */
+section.chapter {
+  background-image: url("img/bg_chapter_wo_chevron.png");
+  background-size: cover;
+  background-position: center;
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 80px 100px;
+}
+section.chapter h1 {
+  color: var(--nb-white-0);
+  font-size: 3em;
+  font-weight: 500;
+  margin: 0 0 0.15em;
+}
+section.chapter h1::before { content: none; }
+section.chapter h2 {
+  color: var(--brand-orange);
+  font-family: var(--font-mono);
+  font-size: 2.2em;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.15em;
+  line-height: 1;
+}
+section.chapter footer { display: none !important; }
+
+/* --- Split slide (left sidebar with title image, content on right) --- */
+section.split {
+  background-image: url("img/bg_title_wo_logo.png");
+  background-size: 35% 100%;
+  background-position: left top;
+  background-repeat: no-repeat;
+  padding: 60px 80px 100px 42%;
+  display: block;
+}
+section.split h1 {
+  color: var(--nb-white-0);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 35%;
+  transform: translateY(-50%);
+  z-index: 5;
+  font-size: 2em;
+  font-weight: 500;
+  text-align: center;
+  margin: 0;
+  padding: 0 24px;
+}
+section.split h1::before { content: none; }
+section.split h2 {
+  margin-top: 0;
+}
+section.split footer { display: none !important; }
+
+/* ---------- Footer (every default slide) ---------- */
+footer {
+  position: absolute;
+  bottom: 22px;
+  left: 80px;
+  right: 80px;
+  font-size: 22px;     /* matches the rendered height of text inside the logo */
+  color: #8a8a8a;      /* matches the "network" gray inside the logo */
+  border-top: 1px solid var(--nb-blue-0);
+  padding-top: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+/* NTC logo on the right side of every default footer */
+footer::after {
+  content: "";
+  background-image: url("img/ntc_logo.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right center;
+  width: 260px;       /* logo is 1651×215 (~7.68:1) */
+  height: 34px;
+  flex-shrink: 0;
+}
+
+/* Marp page numbers — when `paginate: true` — centered between text and logo */
+section::after {
+  color: #8a8a8a;
+  font-family: var(--font-mono);
+  font-size: 22px;
+  bottom: 22px;
+  left: 50%;
+  right: auto;
+  transform: translateX(-50%);
+}
+
+/* Images sized down to fit the slide unless overridden */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ============================================================
+   CUSTOM CONTENT COMPONENTS (kept as-is per request)
+   ============================================================ */
+
+/* Highlight box — neutral surface with primary-color left accent */
+.highlight-box {
+  background: var(--nb-gray-0);
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--nb-blue-0);
+  padding: 16px 20px;
+  margin: 12px 0;
+  font-size: 0.8em;
+  line-height: 1.55;
+  border-radius: var(--radius);
+}
+.highlight-box.warning { border-left-color: var(--brand-orange); }
+.highlight-box.success { border-left-color: var(--nb-green-0); }
+.highlight-box.danger  { border-left-color: var(--nb-red-0); }
+
+/* ============================================================
+   LAYOUT UTILITIES — minimal-markdown helpers
+   Apply via `<!-- _class: name -->` in any MARP slide.
+   ============================================================ */
+
+/* --- middle: h1/h2 stay at the top; remaining content vertically centered
+   in the space between them and the footer (auto-margin centering trick) --- */
+section.middle {
+  display: flex !important;
+  flex-direction: column;
+}
+section.middle > h2 {
+  margin-bottom: auto;
+}
+section.middle > *:has(+ footer) {
+  margin-bottom: auto;
+}
+section.middle > *:last-child:not(footer) {
+  margin-bottom: auto;
+}
+
+/* --- cols-2: h1/h2 span full width; body content auto-flows into two cols --- */
+section.cols-2 {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 50px;
+  row-gap: 14px;
+  align-content: start;
+}
+section.cols-2 > h1,
+section.cols-2 > h2 {
+  grid-column: 1 / -1;
+}
+
+/* --- text-image: text/lists on the left, image on the right --- */
+section.text-image {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 50px;
+  row-gap: 14px;
+  align-content: start;
+}
+section.text-image > h1,
+section.text-image > h2 {
+  grid-column: 1 / -1;
+}
+/* All text-flow children land in the LEFT column — otherwise grid auto-flow
+   would put the second paragraph in the right column, colliding with the image. */
+section.text-image > p,
+section.text-image > ul,
+section.text-image > ol,
+section.text-image > blockquote {
+  grid-column: 1 / 2;
+}
+/* MARP wraps standalone images in <p> — send those to the right column,
+   centered vertically against the text on the left. */
+section.text-image > p:has(> img:only-child) {
+  grid-column: 2 / -1;
+  grid-row: 3 / span 999;
+  align-self: center;
+  justify-self: center;
+  margin: 0;
+}
+section.text-image > p:has(> img:only-child) img {
+  display: block;
+  max-width: 100%;
+  max-height: 480px;
+  border-radius: var(--radius);
+}
+
+/* ============================================================
+   CARD GRIDS — minimal-markdown form
+   Markdown:
+     <!-- _class: grid-2x3 -->
+     - <span class="status status-green">Active</span> **device** · details
+   Each list item becomes a card; the status pill's color tints the stripe.
+   ============================================================ */
+section.grid-2x3,
+section.grid-3x2 {
+  display: flex !important;
+  flex-direction: column;
+}
+section.grid-2x3 > ul,
+section.grid-3x2 > ul {
+  list-style: none;
+  padding: 0;
+  margin: auto 0;
+  display: grid;
+  grid-auto-rows: 1fr;
+}
+section.grid-2x3 > ul {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px 50px;
+  height: 460px;
+}
+section.grid-3x2 > ul {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px 50px;
+  height: 510px;
+}
+section.grid-2x3 > ul > li,
+section.grid-3x2 > ul > li {
+  background: var(--nb-gray-0);
+  border-left: 4px solid var(--nb-blue-0);
+  padding: 18px 22px;
+  font-size: 0.82em;
+  line-height: 1.55;
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 8px;
+  margin: 0;
+  min-height: 0;
+}
+section.grid-2x3 > ul > li::marker,
+section.grid-3x2 > ul > li::marker { content: ""; }
+section.grid-2x3 > ul > li strong,
+section.grid-3x2 > ul > li strong {
+  font-size: 1.15em;
+  font-weight: 500;
+  color: var(--nb-black-0);
+}
+/* The inline status pill class also tints the card's accent stripe */
+section.grid-2x3 > ul > li:has(.status-green),
+section.grid-3x2 > ul > li:has(.status-green) { border-left-color: var(--nb-green-0); }
+section.grid-2x3 > ul > li:has(.status-blue),
+section.grid-3x2 > ul > li:has(.status-blue) { border-left-color: var(--nb-blue-0); }
+section.grid-2x3 > ul > li:has(.status-yellow),
+section.grid-3x2 > ul > li:has(.status-yellow) { border-left-color: var(--brand-orange); }
+section.grid-2x3 > ul > li:has(.status-red),
+section.grid-3x2 > ul > li:has(.status-red) { border-left-color: var(--nb-red-0); }
+
+/* Status pills — short uppercase tokens, NTC-correct hues */
+.status {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.55em;
+  font-weight: 500;
+  font-family: var(--font-sans);
+  color: var(--nb-white-0);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  line-height: 1.4;
+  vertical-align: middle;
+}
+.status-green  { background-color: var(--nb-green-0); }
+.status-red    { background-color: var(--nb-red-0); }
+.status-yellow { background-color: var(--brand-orange); color: var(--nb-white-0); }
+.status-blue   { background-color: var(--nb-blue-0); }
