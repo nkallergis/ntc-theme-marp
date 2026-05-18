@@ -1,7 +1,6 @@
 ---
 marp: true
 theme: ntc
-size: 16:9
 paginate: true
 footer: 'Network to Code · ntc.css reference deck'
 ---
