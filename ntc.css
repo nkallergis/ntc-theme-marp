@@ -163,6 +163,44 @@ pre code {
   padding: 0;
 }
 
+/* ---------- Syntax highlighting ----------
+   Marp runs highlight.js over fenced code blocks and emits `hljs-*` classes,
+   but gives them no colours; without these rules every token renders in the
+   plain `pre` foreground. Tints are chosen for the dark code background and
+   stay within the NTC palette families (blue, orange, green, red, slate). */
+pre code .hljs-comment,
+pre code .hljs-quote          { color: #9aa5ad; font-style: italic; }
+pre code .hljs-keyword,
+pre code .hljs-selector-tag,
+pre code .hljs-meta,
+pre code .hljs-template-tag,
+pre code .hljs-doctag         { color: #66b0ff; }                 /* blue */
+pre code .hljs-attr,
+pre code .hljs-attribute,
+pre code .hljs-built_in,
+pre code .hljs-type,
+pre code .hljs-name,
+pre code .hljs-selector-class,
+pre code .hljs-selector-id    { color: #f5b46b; }                 /* orange */
+pre code .hljs-string,
+pre code .hljs-regexp,
+pre code .hljs-addition       { color: #8fdc8f; }                 /* green */
+pre code .hljs-number,
+pre code .hljs-literal,
+pre code .hljs-deletion       { color: #ff8a8a; }                 /* red */
+pre code .hljs-title,
+pre code .hljs-section,
+pre code .hljs-bullet,
+pre code .hljs-symbol         { color: #f8c76a; }                 /* amber */
+pre code .hljs-variable,
+pre code .hljs-template-variable,
+pre code .hljs-subst,
+pre code .hljs-params         { color: #ffb27a; }                 /* light orange */
+pre code .hljs-punctuation,
+pre code .hljs-operator       { color: #c9cfd4; }
+pre code .hljs-emphasis       { font-style: italic; }
+pre code .hljs-strong         { font-weight: 700; }
+
 /* ---------- Tables ---------- */
 table {
   border-collapse: collapse;
